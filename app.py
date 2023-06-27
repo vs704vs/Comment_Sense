@@ -84,9 +84,12 @@ def generate_video_id(url_input):
   elif( ("www." in url_input) and (url_input.index("www.") == 0) ):
     url_input_trim = url_input[4:]
   
-  if(("youtube.com/watch?v=" in url_input) and (url_input.index("youtube.com/watch?v=") == 0)):
+  video_id = ""
+  
+  if(("youtube" in url_input_trim) and (url_input_trim.index("youtube") == 0)):
     video_id = url_input_trim[20:]
-  elif(("youtu.be/" in url_input) and (url_input.index("youtu.be/") == 0)):
+    
+  elif(("youtu.be" in url_input_trim) and (url_input_trim.index("youtu.be/") == 0)):
     video_id = url_input_trim[9:]
   
   return video_id
