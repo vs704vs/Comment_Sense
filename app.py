@@ -37,7 +37,7 @@ def show_first_progress_bar(value1):
       """
       <style>
           .stProgress > div > div > div > div {
-              background-image: linear-gradient(to right, #99ff99 , #60a2b3);
+              background-image: linear-gradient(to right, #a4f5b1 , #60a2b3);
           }
       </style>""",
       unsafe_allow_html=True,
