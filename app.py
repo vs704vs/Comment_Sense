@@ -32,17 +32,7 @@ def request_lottie(url):
 
 ##########################################Progress bar #########################################  
   
-def show_first_progress_bar(value1):
-  st.markdown(
-      """
-      <style>
-          .stProgress > div > div > div > div {
-              background-image: linear-gradient(to right, #a4f5b1 , #60a2b3);
-          }
-      </style>""",
-      unsafe_allow_html=True,
-  )
-  
+def show_first_progress_bar(value1): 
   value1 = value1*100
   value1 = round(value1, 2)
   
