@@ -233,18 +233,17 @@ def function_control(url_input):
 
 
 with st.container():
-  left_column, right_column = st.columns((3,1))
+  left_column, right_column = st.columns((1,5))
 
   with left_column:
+    lottie_animation = request_lottie("https://assets9.lottiefiles.com/private_files/lf30_xk0j3gld.json")
+    st_lottie(lottie_animation, height= 75)
+  
+  with right_column:
     st.write("""
           # Comment Sense
           ##### Analyze with just a click
-          
           """)
-  
-  with right_column:
-    lottie_animation = request_lottie("https://assets9.lottiefiles.com/private_files/lf30_xk0j3gld.json")
-    st_lottie(lottie_animation, height= 125)
   
   st.divider()
     
