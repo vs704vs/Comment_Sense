@@ -74,25 +74,29 @@ def show_third_progress_bar(value3):
 
 
 def generate_video_id(url_input):
-  
-  url_input_trim = url_input
+   
+  url_input = url_input.strip(); 
   
   if( ("https://" in url_input) and (url_input.index("https://") == 0) ):
-    url_input_trim = url_input[12:]
+    url_input = url_input[8:]
   elif( ("http://" in url_input) and (url_input.index("http://") == 0) ):
-    url_input_trim = url_input[11:]
-  elif( ("www." in url_input) and (url_input.index("www.") == 0) ):
-    url_input_trim = url_input[4:]
+    url_input = url_input[7:]
+    
+  if( ("www." in url_input) and (url_input.index("www.") == 0) ):
+    url_input = url_input[4:]
   
+  print(url_input)
   video_id = ""
   
-  if(("youtube" in url_input_trim) and (url_input_trim.index("youtube") == 0)):
-    video_id = url_input_trim[20:]
+  if(("youtube" in url_input)):
+    video_id = url_input[20:]
     
-  elif(("youtu.be" in url_input_trim) and (url_input_trim.index("youtu.be/") == 0)):
-    video_id = url_input_trim[9:]
+  elif(("youtu.be" in url_input)):
+    video_id = url_input[9:]
   
+  print(video_id)
   return video_id
+  
   
 
 def generate_api_link(my_video_id):
