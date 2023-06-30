@@ -171,43 +171,25 @@ def calculate_percentages(list_of_pol_sub):
 def display_table(list_of_comments, list_of_pol_sub):
   
   with st.expander("View individual comment analysis"):
-    with st.container():
-      col1, col2, col3, col4 = st.columns((10,2.3,2.3,2.3))
-      
-      with col1:
-        st.write("Comments")
-      with col2:
-        st.write("Polarity")
-      with col3:
-        st.write("Subjectivity")
-      with col4:
-        st.write("Analysis")
-        
     
     n = len(list_of_comments)
     
     for i in range(n):
       with st.container():
-        col1, col2, col3, col4 = st.columns((10,2.3,2.3,2.3))
+        
+        st.caption("Comment: " + list_of_comments[i])
+        st.caption("Polarity: " + str(round(list_of_pol_sub[i][0], 2)) + " Subjectivity: " + str(round(list_of_pol_sub[i][1], 2)))
+        if(list_of_pol_sub[i][0] > 0):
+            st.caption("Analysis: " + "Positive")
+          
+        elif(list_of_pol_sub[i][0] < 0):
+          st.caption("Analysis: " + "Negative")
+        
+        elif(list_of_pol_sub[i][0] == 0):
+          st.caption("Analysis: " + "Neutral")
+          
+        st.divider()
 
-        with col1:
-          st.caption(list_of_comments[i])
-        
-        with col2:
-          st.caption(round(list_of_pol_sub[i][0], 2))
-        
-        with col3:
-          st.caption(round(list_of_pol_sub[i][1], 2))
-        
-        with col4:
-          if(list_of_pol_sub[i][0] > 0):
-            st.caption("Positive")
-          
-          elif(list_of_pol_sub[i][0] < 0):
-            st.caption("Negative")
-          
-          elif(list_of_pol_sub[i][0] == 0):
-            st.caption("Neutral")
 
 
 
